@@ -15,7 +15,7 @@ class DemoAppointmentController extends Controller
     }
     public function create()
     {
-        return view('demo'); // Cambia 'demo.appointment-form' por tu ruta de vista correcta
+        return view('demo'); 
     }
 
     public function store(Request $request)
