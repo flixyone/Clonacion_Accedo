@@ -66,12 +66,14 @@ header {
     margin-top: 5px;
     padding: 8px;
     margin-right: 310px;
+
 }
 
 .extra-options p {
     color: #928AE7;
     font-size: 1rem;
     margin-left: -12px;
+
 }
 
 .registro-btn {
@@ -82,10 +84,12 @@ header {
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s;
+    text-decoration: none;
 }
 
 .registro-btn:hover {
     background: darkgreen;
+    text-decoration: none;
 }
 
 .registro-info {
@@ -93,6 +97,7 @@ header {
     align-items: center;
     gap: 10px;
     color: darkblue;
+
 }
 
 .registro-info img {
@@ -107,6 +112,7 @@ header {
     padding: 0;
     cursor: pointer;
     gap: 10px;
+    text-decoration: none;
 }
 
 .login-btn p {
@@ -118,11 +124,13 @@ header {
 .login-btn i {
     color: #928AE7;
     font-size: 1.5rem;
+
 }
 
 .bi-person-circle {
     color: #928AE7;
     font-size: 1.5rem;
+
 }
 
 .main-content {
@@ -137,16 +145,19 @@ header {
     flex: 1;
     padding-right: 20px;
     margin-left: 300px;
+
 }
 
 .content-left .paragraph-one {
     font-size: 2rem;
+    margin-bottom: 40px;
 }
 
 .content-left .paragraph-padding {
     color: rgb(166, 165, 165);
     line-height: 30px;
     font-size: 1.1rem;
+
 }
 
 .content-left .highlight {

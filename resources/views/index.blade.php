@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ACCEDO</title>
-    <link rel="stylesheet" href="{{ asset('css/index.css') }}"> <!-- Enlace a tu hoja de estilos personalizada -->
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}"> <!-- Enlace  hoja de estilos personalizada -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> <!-- Enlace a Bootstrap Icons -->
 </head>
 <body>
@@ -12,20 +12,37 @@
     <header>
         <nav class="main-menu">
             <ul>
-                <li class="logo"><img src="{{ asset('img/logo.png') }}" alt="Accedo"></li> <!-- Logo de la empresa -->
+                <a href="{{ route ('index')}}"><li class="logo"><img src="{{ asset('img/logo.png') }}" alt="Accedo"></li></a>  <!-- Logo de la empresa -->
                 <li><a href="#home">Home</a></li>
                 <li><a href="#nosotros">Nosotros</a></li>
                 <li><a href="#soporte-ayuda">Soporte y Ayuda</a></li>
-                <li><a href="#agendar-demo">Agendar Demo</a></li>
+                <li><a href="demo">Agendar Demo</a></li>
+                @if (Auth::check()) <!-- Verifica si el usuario ha iniciado sesión -->
+            <li><a href="home">Ver demo</a></li>
+        @endif
             </ul>
         </nav>
         <div class="extra-options">
-            <button class="registro-btn"><strong>Registro</strong></button> <!-- Botón de registro -->
-            <button class="login-btn">
-                <i class="bi bi-person-circle"></i> <!-- Icono de usuario -->
-                <p><strong>Login</strong></p> <!-- Botón de login -->
-            </button>
+            @guest
+                <!-- Mostrar solo si el usuario no está autenticado -->
+                <a href="{{ route('register') }}" class="registro-btn"><strong>Registro</strong></a>
+                <a href="{{ route('login') }}" class="login-btn">
+                    <i class="bi bi-person-circle"></i> <!-- Icono de usuario -->
+                    <p><strong>Login</strong></p> <!-- Botón de login -->
+                </a>
+            @else
+                <!-- Mostrar solo si el usuario está autenticado -->
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="login-btn">
+                        <i class="bi bi-person-circle"></i> <!-- Icono de usuario -->
+                        <p><strong>Cerrar sesión</strong></p> <!-- Botón de cerrar sesión -->
+                    </button>
+
+                </form>
+            @endguest
         </div>
+
     </header>
 
     {{-- Apartado principal --}}
